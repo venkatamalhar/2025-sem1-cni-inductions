@@ -1,0 +1,28 @@
+version: "3.9"
+services:
+  ros2:
+    build: .
+    container_name: ros2_turtle
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY=novnc:0.0
+    networks:
+      - x11
+    depends_on:
+      - novnc
+    volumes:
+      - ./src:/src/
+
+  novnc:  
+    image: theasp/novnc:latest
+    environment:
+      - DISPLAY_WIDTH=1728
+      - DISPLAY_HEIGHT=972
+    ports:
+      - "8080:8080"
+    networks:
+      - x11
+
+networks:
+  x11:
