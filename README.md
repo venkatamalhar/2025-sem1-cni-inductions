@@ -3,7 +3,9 @@
 Welcome to the induction program for our club.
 This repository will guide you through multiple tasks that help you get started with **Git, Docker, ROS 2, and basic programming concepts**.
 
-The tasks are progressive and will gradually increase in difficulty.
+The tasks are progressive and will gradually increase in difficulty. You are not expected to complete all the tasks within the timeframe. However, try to maximize on how much you learn during these tasks since this knowledge will help you out in your round 3!
+
+As always, best of luck and happy coding!
 
 ---
 
@@ -343,6 +345,53 @@ Modify your code to draw **any other shape** (square, spiral, star, etc.) by cha
      ```
 ---
 
-## Task 3
+## Task 3: Swarm Algorithm with Turtlesim
 
-(To be announced.)
+### Objective
+
+In this task, you are required to implement a **swarm behavior** using at least **five turtles** in the `turtlesim` simulator.
+This is a slightly open-ended task designed to encourage creativity and experimentation.
+
+One well-known algorithm for simulating swarm behavior is the **Boids algorithm**, which models the flocking behavior of birds. You can read more about it here:
+🔗 [Boids — Wikipedia](https://en.wikipedia.org/wiki/Boids)
+
+---
+
+### Requirements
+
+1. **Spawn at least 5 turtles** inside `turtlesim`.
+
+   * Use the `/spawn` service to create multiple turtles.
+   * Each turtle should move independently according to your algorithm.
+
+2. **Implement a swarm algorithm** where turtles show some form of coordinated movement.
+
+   * Examples of behaviors: flocking, chasing a leader, forming patterns, or avoiding collisions.
+   * Boids is strongly suggested, but other creative approaches are welcome.
+
+3. **Use ROS 2 nodes and topics** to control the turtles.
+
+   * Publish velocity commands to `/turtleX/cmd_vel`.
+   * Optionally, subscribe to `/turtleX/pose` for position feedback.
+
+---
+
+### Deliverables
+
+* **Code**: Submit your ROS 2 package containing the implementation.
+* **Demonstration Video**: Upload a short demo (1–3 minutes) of your turtles executing the swarm algorithm.
+
+  * Upload as an **unlisted YouTube video** and include the link in your submission.
+
+---
+
+### Suggested Approach
+
+1. Research the **Boids algorithm** and its three rules:
+
+   * **Separation**: avoid crowding neighbors.
+   * **Alignment**: move in the same direction as neighbors.
+   * **Cohesion**: move toward the average position of neighbors.
+2. Start by spawning 5 turtles in random positions.
+3. Implement each rule step by step and test.
+4. Tune parameters (speed, turning rate, neighbor distance) until the behavior looks realistic.
