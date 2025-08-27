@@ -283,7 +283,7 @@ Inside the `turtle_draw` package:
 1. Create a Python node file:
 
    ```bash
-   cd /src/task2/src/turtle_draw/turtle_draw
+   cd /src/task2/turtle_draw/turtle_draw
    touch circle_drawer.py
    chmod +x circle_drawer.py
    ```
